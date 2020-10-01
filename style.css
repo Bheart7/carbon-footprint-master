@@ -23,7 +23,12 @@
 }
 
 #announcement-panel {
-  background-image: linear-gradient(to right,rgba(38, 77, 0, 0.55), rgba(38, 77, 0, 0.55)),url('background.jpg');
+  background-image: linear-gradient(
+      to right,
+      rgba(38, 77, 0, 0.55),
+      rgba(38, 77, 0, 0.55)
+    ),
+    url('background.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -51,4 +56,70 @@
 .score-info {
   padding: 10px;
   margin: 0;
+}
+
+/* about */
+
+.container {
+  margin-top: 3rem;
+}
+
+.header {
+  position: relative;
+  padding: 3rem 4rem 4rem;
+  border-radius: 30px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  text-align: center;
+}
+
+.paragraph {
+  padding-top: 1rem;
+  font-size: 1.7rem;
+  text-align: justify;
+  text-justify: auto;
+}
+
+.text {
+  color: #000;
+  text-decoration: underline;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  background-color: #111;
+  color: #fff;
+}
+
+::selection {
+  background-color: #111;
+  color: #fff;
+}
+
+.button {
+  padding: 0.6rem 0.9rem !important;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background-color: #fff !important;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
+
+.quiz {
+  margin-top: 3rem;
+  position: relative;
+  padding: 3rem 4rem 4rem;
+  border-radius: 30px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.iframe {
+  margin-top: 2rem;
 }
