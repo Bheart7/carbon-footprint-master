@@ -1,140 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Carbon Footprint Calculator</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+  </head>
+  <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" id="announcement-panel">
-                <h1 id="announcement-header">Want to know your Carbon Footprint?</h1>
-                <h3 id="announcement-subheader">Find out with the app</h3>
-                <a class="btn btn-success" href="about.html" role="button">About us</a>
-            </div>
+      <button class="btn btn-primary" id="langBtn">Change to Nepali</button>
+      <div class="row">
+        <div
+          class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center"
+          id="announcement-panel"
+        >
+          <!-- <h1 id="announcement-header">Want to know your Carbon Footprint?</h1>
+                <h3 id="announcement-subheader">Find out with the app</h3> -->
+          <a
+            class="btn btn-success"
+            id="knowMore"
+            href="about.html"
+            role="button"
+            >Know more</a
+          >
         </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                <div id="form">
-                    <form>
-                        <h3 id="home-energy-label"><i class="fa fa-home" aria-hidden="true"></i> Home Energy</h3>   
-                        <div class="form-group">
-                            <label for="electric">Monthly electric bill</label>
-                            <div class="input-group">
-                                <div class="input-group-addon">Nrs</div>
-                                <input class="form-control" id="electric" type="number" min="0" step="0.01">
-                            </div>
-                            <span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="gas">Monthly Cooking Gas bill</label>
-                            <div class="input-group">
-                                <div class="input-group-addon">Nrs</div>
-                                <input class="form-control" id="gas" type="number" min="0" step="0.01">
-                            </div>
-                            <span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
-                        </div>
-                        <br/>
-                        <h3 class="form-section-label" id="travel-label"><i class="fa fa-globe" aria-hidden="true"></i> Travel</h3>
-                        <div class="form-group">
-                            <label for="car">Annual distance driven on your car</label>
-                            <div class="input-group">
-                            	<div class="input-group-addon">Km</div>
-                            	<input class="form-control" id="car" type="number" min="0" step="1">
-                            </div> 
-                            <span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="car">Annual distance driven on your two wheeler</label>
-                            <div class="input-group">
-                            	<div class="input-group-addon">Km</div>
-                            	<input class="form-control" id="two-wheeler" type="number" min="0" step="1">
-                            </div>
-                            <span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="flights-4-more">Number of hours of flights taken in the past year
-                            <label for="flights-4-more">Hours spent on the flights</label>
-                            <div class="input-group">
-                            	<div class="input-group-addon">hr</div>
-                            	<input class="form-control" id="flights-4-more" type="number" min="0" step="1">
-                            </div>
-
-                            
-                            <span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
-                        </div>
-                        <br/>
-                        <h3 class="form-section-label" id="waste-label"><i class="fa fa-recycle" aria-hidden="true"></i> Waste</h3>
-                        <div class="form-group">
-                            <label>Do you recycle newspaper?</label>
-                            <div class="alert alert-danger" role="alert" id="newspaper-alert"><strong>Oops!</strong> You need to make a selection.</div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="newspaperOptionsRadios" id="optionsRadio1" value="option1">
-                                    Yes
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="newspaperOptionsRadios" id="optionsRadio2" value="option2">
-                                    No
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Do you recycle plastics?</label>
-                            <div class="alert alert-danger" role="alert" id="alum-tin-alert"><strong>Oops!</strong> You need to make a selection.</div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="alumtinOptionsRadios" id="optionsRadio3" value="option3">
-                                    Yes
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="alumtinOptionsRadios" id="optionsRadio4" value="option4">
-                                    No
-                                </label>
-                            </div>
-                        </div>
-                        <br/>
-                        <button id="calculate-btn" type="button" class="btn btn-success btn-lg btn-block">Calculate</button>
-                    </form>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"></div>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          <div id="form">
+            <form>
+              <h3 id="home-energy-label">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                <span id="homeEnergyLabel">Home Energy</span>
+              </h3>
+              <div class="form-group">
+                <label for="electric" id="electricLabel"
+                  >Monthly electric bill</label
+                >
+                <div class="input-group">
+                  <div class="input-group-addon" id="currency1">Nrs</div>
+                  <input
+                    class="form-control"
+                    id="electric"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                  />
+                </div>
+                <span class="help-block" id="helpBlock1"
+                  >Enter 0 if not applicable. If left blank, will default to
+                  0.</span
+                >
+              </div>
+              <div class="form-group">
+                <label for="gas" id="gasLabel">Monthly Cooking Gas bill</label>
+                <div class="input-group">
+                  <div class="input-group-addon" id="currency2">Nrs</div>
+                  <input
+                    class="form-control"
+                    id="gas"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                  />
+                </div>
+                <span class="help-block" id="helpBlock2"
+                  >Enter 0 if not applicable. If left blank, will default to
+                  0.</span
+                >
+              </div>
+              <br />
+              <h3 class="form-section-label" id="travel-label">
+                <i class="fa fa-globe" aria-hidden="true"></i>
+                <span id="travelLabel">Travel</span>
+              </h3>
+              <div class="form-group">
+                <label for="car" id="carLabel"
+                  >Annual distance driven on your car</label
+                >
+                <div class="input-group">
+                  <div class="input-group-addon" id="distance1">Km</div>
+                  <input
+                    class="form-control"
+                    id="car"
+                    type="number"
+                    min="0"
+                    step="1"
+                  />
+                </div>
+                <span class="help-block" id="helpBlock3"
+                  >Enter 0 if not applicable. If left blank, will default to
+                  0.</span
+                >
+              </div>
+              <div class="form-group">
+                <label for="two-wheeler" id="wheeler"
+                  >Annual distance driven on your two wheeler</label
+                >
+                <div class="input-group">
+                  <div class="input-group-addon" id="distance2">Km</div>
+                  <input
+                    class="form-control"
+                    id="two-wheeler"
+                    type="number"
+                    min="0"
+                    step="1"
+                  />
+                </div>
+                <span class="help-block" id="helpBlock4"
+                  >Enter 0 if not applicable. If left blank, will default to
+                  0.</span
+                >
+              </div>
+              <div class="form-group">
+                <label for="flights-4-more" id="flightLabel"
+                  >Number of hours of flights taken in the past year
+                </label>
+                <div class="input-group">
+                  <div class="input-group-addon" id="hourLabel">hr</div>
+                  <input
+                    class="form-control"
+                    id="flights-4-more"
+                    type="number"
+                    min="0"
+                    step="1"
+                  />
                 </div>
 
-                <div id="results" class="text-center">
-                    <h1 id="score"></h1>
-                    <br/>
-                    <p class="lead">This number represents the amount of greenhouse gases in units of carbon dioxide you emit per year</p>
-                    <br/>
-                    <h5 class="bg-success score-info">6,000 or below is EXCELLENT</h5>
-                    <h5 class="bg-info score-info">6,000 to 15,999 is GOOD</h5>
-                    <h5 class="bg-warning score-info">16,000 to 22,000 is AVERAGE</h5>
-                    <h5 class="bg-danger score-info">22,000 or above is BAD</h5>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <button id="recalculate-btn" type="button" class="btn btn-success btn-lg btn-block">Recalculate</button>
+                <span class="help-block" id="helpBlock5"
+                  >Enter 0 if not applicable. If left blank, will default to
+                  0.</span
+                >
+              </div>
+              <br />
+              <h3 class="form-section-label" id="waste-label">
+                <i class="fa fa-recycle" aria-hidden="true"></i>
+                <span id="wasteLabel">Waste</span>
+              </h3>
+              <div class="form-group">
+                <label id="recycleLabel">Do you recycle newspaper?</label>
+                <div
+                  class="alert alert-danger"
+                  role="alert"
+                  id="newspaper-alert"
+                >
+                  <span id="selection1"></span> You need to make a selection.
                 </div>
-            </div>  
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            </div>  
+                <div class="radio">
+                  <label>
+                    <input
+                      type="radio"
+                      name="newspaperOptionsRadios"
+                      id="optionsRadio1"
+                      value="option1"
+                    />
+                    <span id="yesLabel1">Yes</span>
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input
+                      type="radio"
+                      name="newspaperOptionsRadios"
+                      id="optionsRadio2"
+                      value="option2"
+                    />
+                    <span id="noLabel1">No</span>
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label id="plasticLabel">Do you recycle plastics?</label>
+                <div
+                  class="alert alert-danger"
+                  role="alert"
+                  id="alum-tin-alert"
+                >
+                  <span id="selection2">You need to make a selection.</span>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input
+                      type="radio"
+                      name="alumtinOptionsRadios"
+                      id="optionsRadio3"
+                      value="option3"
+                    />
+                    <span id="yesLabel2">Yes</span>
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input
+                      type="radio"
+                      name="alumtinOptionsRadios"
+                      id="optionsRadio4"
+                      value="option4"
+                    />
+                    <span id="noLabel2">No</span>
+                  </label>
+                </div>
+              </div>
+              <br />
+              <button
+                id="calculateBtn"
+                type="button"
+                class="btn btn-success btn-lg btn-block"
+              >
+                Calculate
+              </button>
+            </form>
+          </div>
+
+          <div id="results" class="text-center">
+            <h1 id="score"></h1>
+            <br />
+            <p class="lead" id="lead">
+              This number represents the amount of greenhouse gases in units of
+              carbon dioxide you emit per year
+            </p>
+            <br />
+            <h5 class="bg-success score-info" id="level1">
+              6,000 or below is EXCELLENT
+            </h5>
+            <h5 class="bg-info score-info" id="level2">
+              6,000 to 15,999 is GOOD
+            </h5>
+            <h5 class="bg-warning score-info" id="level3">
+              16,000 to 22,000 is AVERAGE
+            </h5>
+            <h5 class="bg-danger score-info" id="level4">
+              22,000 or above is BAD
+            </h5>
+            <br />
+            <br />
+            <br />
+            <button
+              id="recalculateBtn"
+              type="button"
+              class="btn btn-success btn-lg btn-block"
+            >
+              Recalculate
+            </button>
+          </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"></div>
+      </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
     <script src="script.js" type="text/javascript"></script>
-</body>
+  </body>
 </html>
